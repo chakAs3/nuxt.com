@@ -6,12 +6,13 @@ const videoModalOpen = ref(false)
 
 const site = useSiteConfig()
 useSeoMeta({
-  title: 'Nuxt: The Intuitive Vue Framework',
-  ogTitle: 'Nuxt: The Intuitive Vue Framework',
-  description: 'Nuxt is an open source framework that makes web development intuitive and powerful. Create performant and production-grade full-stack web apps and websites with confidence.',
+  title: 'Hoda Eyes: Where Beauty Meets Convenience and Community',
+  ogTitle: 'Hoda Eyes: Where Beauty Meets Convenience and Community',
+  description: 'Discover Hoda Eyes, your go-to destination for top-quality nails and eyelash services. Whether you\'re looking for at-home beauty treatments or professional training, we\'ve got you covered. Join our community and experience beauty, quality, and convenience like never before.',
   ogImage: joinURL(site.url, '/social.jpg'),
   twitterImage: joinURL(site.url, '/social.jpg')
 })
+
 </script>
 
 <template>
@@ -22,49 +23,31 @@ useSeoMeta({
       </template>
 
       <template #title>
-        The Intuitive<br><span class="text-primary block lg:inline-block">Vue Framework</span>
+        Welcome to<br><span class="text-primary block lg:inline-block">Hoda Eyes Project</span>
       </template>
 
       <template #description>
-        Nuxt is an <NuxtLink to="https://github.com/nuxt/nuxt" target="_blank">
-          open source framework
-        </NuxtLink> that makes web development intuitive and powerful.<br>Create performant and production-grade full-stack web apps and websites with confidence.
+        Tired of subpar nail and eyelash services in Dubai? Hoda Eyes has the solution you've been looking for. We specialize in nail and eyelash services, delivered by highly experienced and talented professionals dedicated to enhancing your beauty.
+        
       </template>
 
       <template #links>
-        <UButton to="/docs/getting-started/installation" icon="i-ph-rocket-launch-duotone" size="xl">
-          Get Started
-        </UButton>
-        <UButton size="xl" color="white" icon="i-ph-video-duotone" @click="videoModalOpen = true">
-          What is Nuxt?
-        </UButton>
-
-        <UModal v-model="videoModalOpen">
-          <div class="p-3">
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube-nocookie.com/embed/dCxSsr5xuL8"
-              title="Nuxt in 100 Seconds by Fireship"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-          </div>
-        </UModal>
+        <HomeSectionFor class="justify-center flex " />
       </template>
 
       <ULandingLogos :title="page.logos.title" class="mt-32 text-gray-500 dark:text-gray-400">
-        <BrandsGithub class="hidden md:block h-7" />
-        <BrandsOpenai class="h-5 md:h-8" />
-        <BrandsNasa class="h-4 md:h-6" />
-        <BrandsGoogle class="h-5 md:h-8" />
-        <BrandsFedora class="h-4 md:h-7" />
-        <BrandsGitlab class="hidden sm:block h-4 md:h-7" />
-        <BrandsUpwork class="hidden md:block h-8" />
+        <!-- Replace these logo components with your own -->
+        <BrandsGithub class="h-7" />
+        <BrandsOpenai class="h-5" />
+        <BrandsNasa class="h-4" />
+        <BrandsGoogle class="h-5" />
+        <BrandsFedora class="h-4" />
+        <BrandsGitlab class="h-4" />
+        <BrandsUpwork class="h-8" />
       </ULandingLogos>
     </ULandingHero>
 
+    <!-- Add more sections as needed -->
     <!-- eslint-disable vue/no-deprecated-slot-attribute -->
     <ULandingSection
       v-for="(section, index) of page.sections"
@@ -120,3 +103,4 @@ useSeoMeta({
     </ULandingSection>
   </div>
 </template>
+
